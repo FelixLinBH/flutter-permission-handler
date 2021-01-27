@@ -74,15 +74,6 @@
             completionHandler(PermissionStatusDenied);
         }
     }];
-
-
-    ABAddressBookRequestAccessWithCompletion(ABAddressBookCreate(), ^(bool granted, CFErrorRef error) {
-        if (granted) {
-            completionHandler(PermissionStatusGranted);
-        } else {
-            completionHandler(PermissionStatusDenied);
-        }
-    });
 }
 
 + (void)requestPermissionsFromAddressBook:(PermissionStatusHandler)completionHandler {
